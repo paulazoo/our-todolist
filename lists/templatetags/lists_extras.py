@@ -6,7 +6,7 @@ register = template.Library()
 
 
 # Thanks to Dan Jacob and Sean Vieira for making the following snippet
-# available at http://flask.pocoo.org/snippets/33/
+# available at https://flask.pocoo.org/snippets/33/
 # minor changes by me: register filter, removing tzinfo and python 3 fix
 @register.filter("humanize")
 def humanize_time(dt, past_="ago", future_="from now", default="just now"):
