@@ -48,7 +48,7 @@ class TodoViewSet(viewsets.ModelViewSet):
 
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
-    permission_classes = (IsCreatorOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def perform_create(self, serializer):
         user = self.request.user
