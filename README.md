@@ -1,5 +1,10 @@
 # General
-Django todo list with authentication for Paula and Brian
+Django todo list w authentication for Paula and Brian
+
+# Future
+Edit todolist page more
+Delete todos
+More lists
 
 # Prerequisites
 - Django
