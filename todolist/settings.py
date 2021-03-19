@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+# For whitenoise stuff for styles
+import django_heroku
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -119,3 +122,5 @@ TEMPLATES = [
         },
     },
 ]
+
+django_heroku.settings(locals())
