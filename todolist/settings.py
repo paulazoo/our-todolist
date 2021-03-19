@@ -63,10 +63,13 @@ WSGI_APPLICATION = "todolist.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "NAME": "degk2rm2g2c52t",
+        "HOST": "ec2-18-233-83-165.compute-1.amazonaws.com",
+        "PORT": 5432,
+        "USER": "wsbjfiufzjjrvt",
+        "PASSWORD": "e4a39789013754066a5441c847647f6d80860a4055ded84ebe249ad55d76f8cf"
     }
 }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
