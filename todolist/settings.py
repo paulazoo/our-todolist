@@ -16,6 +16,7 @@ import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+is_prod = os.environ.get('IS_HEROKU', None)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -62,17 +63,29 @@ WSGI_APPLICATION = "todolist.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "degk2rm2g2c52t",
-        "HOST": "ec2-18-233-83-165.compute-1.amazonaws.com",
-        "PORT": 5432,
-        "USER": "wsbjfiufzjjrvt",
-        "PASSWORD": "e4a39789013754066a5441c847647f6d80860a4055ded84ebe249ad55d76f8cf"
+if is_prod:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "degk2rm2g2c52t",
+            "HOST": "ec2-18-233-83-165.compute-1.amazonaws.com",
+            "PORT": 5432,
+            "USER": os.environ.get("DB_USERNAME", None),
+            "PASSWORD": os.environ.get("DB_PASSWORD", None),
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "degk2rm2g2c52t",
+            "HOST": "ec2-18-233-83-165.compute-1.amazonaws.com",
+            "PORT": 5432,
+            "USER": "wsbjfiufzjjrvt",
+            "PASSWORD": "e4a39789013754066a5441c847647f6d80860a4055ded84ebe249ad55d76f8cf"
+        }
+    }
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
