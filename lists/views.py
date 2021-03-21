@@ -26,6 +26,7 @@ def add_todo(request, todolist_id):
             user = request.user if request.user.is_authenticated else None
             todo = Todo(
                 description=request.POST["description"],
+                info=request.POST["info"],
                 todolist_id=todolist_id,
                 creator=user,
             )

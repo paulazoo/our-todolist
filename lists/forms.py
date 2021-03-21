@@ -13,3 +13,7 @@ class TodoForm(forms.Form):
     description = forms.CharField(
         **form_kwargs(widget=forms.TextInput(attrs=widget_attrs("Enter your todo")))
     )
+    
+    info = forms.CharField(
+        **form_kwargs(widget=forms.TextInput(attrs=widget_attrs("Add some info")))
+    )

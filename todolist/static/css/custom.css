@@ -24,8 +24,10 @@ tr td.todolist-title {
 
 .finished-todos li {
   color: #aaa;
-  padding-left: 5pt;
-  text-decoration: line-through;
+}
+
+.info {
+  text-align: right;
 }
 
 .container {

@@ -34,6 +34,7 @@ class TodoSerializer(serializers.ModelSerializer):
             "id",
             "todolist",
             "description",
+            "info",
             "created_at",
             "creator",
             "is_finished",

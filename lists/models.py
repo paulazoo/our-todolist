@@ -28,6 +28,7 @@ class TodoList(models.Model):
 
 class Todo(models.Model):
     description = models.CharField(max_length=128)
+    info = models.CharField(max_length=128, default="")
     created_at = models.DateTimeField(auto_now=True)
     finished_at = models.DateTimeField(null=True)
     is_finished = models.BooleanField(default=False)
